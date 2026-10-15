@@ -181,5 +181,29 @@ fun KartuFormBiodata(modifier: Modifier = Modifier) {
                 fontSize = 11.sp,
                 fontWeight = FontWeight.Bold
             )
+            Spacer(modifier = Modifier.height(4.dp))
 
-            X
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                PilihanSkill(
+                    teks = stringResource(R.string.skill_android),
+                    dipilih = androidDipilih,
+                    saatDipilih = { androidDipilih = it }
+                )
+
+                PilihanSkill(
+                    teks = stringResource(R.string.skill_uiux),
+                    dipilih = uiuxDipilih,
+                    saatDipilih = { uiuxDipilih = it }
+                )
+
+                PilihanSkill(
+                    teks = stringResource(R.string.skill_web),
+                    dipilih = webDipilih,
+                    saatDipilih = { webDipilih = it }
+                )
+            }
+
