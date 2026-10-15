@@ -146,4 +146,12 @@ fun KartuFormBiodata(modifier: Modifier = Modifier) {
                     modifier = Modifier.weight(1f)
                 )
             }
+            Spacer(modifier = Modifier.height(12.dp))
+
+            InputBiodata(
+                value = email,
+                onValueChange = { email = it },
+                hint = stringResource(R.string.email),
+                modifier = Modifier.fillMaxWidth()
+            )
 
