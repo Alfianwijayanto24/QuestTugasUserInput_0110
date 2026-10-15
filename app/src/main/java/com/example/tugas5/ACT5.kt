@@ -79,4 +79,18 @@ fun TampilanACT5() {
         }
     }
 }
+@Composable
+fun KartuFormBiodata(modifier: Modifier = Modifier) {
+    var namaDepan by remember { mutableStateOf("") }
+    var namaBelakang by remember { mutableStateOf("") }
+    var email by remember { mutableStateOf("") }
+    var tanggalLahir by remember { mutableStateOf("") }
+    var experience by remember { mutableStateOf("") }
+
+    var androidDipilih by remember { mutableStateOf(false) }
+    var uiuxDipilih by remember { mutableStateOf(false) }
+    var webDipilih by remember { mutableStateOf(false) }
+
+    var tampilkanHasil by remember { mutableStateOf(false) }
+    var tampilkanPesan by remember { mutableStateOf(false) }
 
