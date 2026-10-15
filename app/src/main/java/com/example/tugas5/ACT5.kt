@@ -126,3 +126,9 @@ fun KartuFormBiodata(modifier: Modifier = Modifier) {
                 fontSize = 9.sp
             )
 
+            Spacer(modifier = Modifier.height(20.dp))
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(6.dp)
+            )
