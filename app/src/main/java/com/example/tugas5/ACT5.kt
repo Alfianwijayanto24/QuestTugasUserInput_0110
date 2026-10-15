@@ -118,7 +118,11 @@ fun KartuFormBiodata(modifier: Modifier = Modifier) {
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Bold
             )
+            Spacer(modifier = Modifier.height(6.dp))
 
-
-
+            Text(
+                text = stringResource(R.string.petunjuk_form),
+                color = colorResource(R.color.teks_sekunder),
+                fontSize = 9.sp
+            )
 
