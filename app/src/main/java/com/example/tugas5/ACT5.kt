@@ -93,4 +93,16 @@ fun KartuFormBiodata(modifier: Modifier = Modifier) {
 
     var tampilkanHasil by remember { mutableStateOf(false) }
     var tampilkanPesan by remember { mutableStateOf(false) }
-
+    Card(
+        modifier = modifier,
+        shape = RoundedCornerShape(
+            topStart = 24.dp,
+            topEnd = 24.dp,
+            bottomStart = 0.dp,
+            bottomEnd = 0.dp
+        ),
+        colors = CardDefaults.cardColors(
+            containerColor = colorResource(R.color.putih)
+        ),
+        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+    )
