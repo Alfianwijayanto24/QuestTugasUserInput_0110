@@ -69,4 +69,14 @@ fun TampilanACT5() {
                         .height(220.dp),
                     contentScale = androidx.compose.ui.layout.ContentScale.Crop
                 )
+                KartuFormBiodata(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp)
+                        .offset(y = 155.dp)
+                )
+            }
+        }
+    }
+}
 
