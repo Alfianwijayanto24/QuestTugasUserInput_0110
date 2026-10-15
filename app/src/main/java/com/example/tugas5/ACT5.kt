@@ -206,4 +206,38 @@ fun KartuFormBiodata(modifier: Modifier = Modifier) {
                     saatDipilih = { webDipilih = it }
                 )
             }
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Button(
+                onClick = {
+                    val skillTerpilih = androidDipilih || uiuxDipilih || webDipilih
+                    if (
+                        namaDepan.isBlank() ||
+                        namaBelakang.isBlank() ||
+                        email.isBlank() ||
+                        tanggalLahir.isBlank() ||
+                        experience.isBlank() ||
+                        !skillTerpilih
+                    ) {
+                        tampilkanPesan = true
+                    } else {
+                        tampilkanHasil = true
+                    }
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(40.dp),
+                shape = RoundedCornerShape(12.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = colorResource(R.color.ungu_utama)
+                )
+            ) {
+                Text(
+                    text = stringResource(R.string.proceed),
+                    color = colorResource(R.color.putih),
+                    fontSize = 11.sp
+                )
+            }
+        }
+    }
 
