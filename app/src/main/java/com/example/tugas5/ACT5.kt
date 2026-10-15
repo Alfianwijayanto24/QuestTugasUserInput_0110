@@ -390,6 +390,69 @@ fun KolomTanggal(
         }
     }
 }
+@Composable
+fun PilihanExperience(
+    experience: String,
+    onExperienceDipilih: (String) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    var menuTerbuka by remember { mutableStateOf(false) }
+
+    Box(modifier = modifier) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(38.dp)
+                .clip(RoundedCornerShape(12.dp))
+                .border(
+                    1.dp,
+                    colorResource(R.color.garis_input),
+                    RoundedCornerShape(12.dp)
+                )
+                .clickable { menuTerbuka = true }
+                .padding(horizontal = 10.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                text = if (experience.isBlank()) {
+                    stringResource(R.string.experience)
+                } else {
+                    experience
+                },
+                color = colorResource(R.color.teks_utama),
+                fontSize = 10.sp
+            )
+
+            Text(
+                text = "▾",
+                color = colorResource(R.color.teks_utama),
+                fontSize = 12.sp
+            )
+        }
+
+        DropdownMenu(
+            expanded = menuTerbuka,
+            onDismissRequest = { menuTerbuka = false }
+        ) {
+            listOf(
+                stringResource(R.string.experience_pemula),
+                stringResource(R.string.experience_menengah),
+                stringResource(R.string.experience_mahir)
+            ).forEach { pilihan ->
+                DropdownMenuItem(
+                    text = { Text(pilihan) },
+                    onClick = {
+                        onExperienceDipilih(pilihan)
+                        menuTerbuka = false
+                    }
+                )
+            }
+        }
+    }
+}
+
+
 
 
 
