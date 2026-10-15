@@ -60,4 +60,13 @@ fun TampilanACT5() {
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(innerPadding)
-            )
+            ){
+                Image(
+                    painter = painterResource(R.drawable.header_spider),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(220.dp),
+                    contentScale = androidx.compose.ui.layout.ContentScale.Crop
+                )
+
