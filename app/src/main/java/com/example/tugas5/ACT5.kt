@@ -166,4 +166,10 @@ fun KartuFormBiodata(modifier: Modifier = Modifier) {
                     onTanggalDipilih = { tanggalLahir = it },
                     modifier = Modifier.weight(1f)
                 )
+                PilihanExperience(
+                    experience = experience,
+                    onExperienceDipilih = { experience = it },
+                    modifier = Modifier.weight(1f)
+                )
+            }
 
