@@ -154,4 +154,9 @@ fun KartuFormBiodata(modifier: Modifier = Modifier) {
                 hint = stringResource(R.string.email),
                 modifier = Modifier.fillMaxWidth()
             )
+            Spacer(modifier = Modifier.height(12.dp))
 
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(6.dp)
+            )
