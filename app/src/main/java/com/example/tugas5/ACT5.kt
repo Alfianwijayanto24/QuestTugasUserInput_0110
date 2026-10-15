@@ -452,6 +452,30 @@ fun PilihanExperience(
     }
 }
 
+@Composable
+fun PilihanSkill(
+    teks: String,
+    dipilih: Boolean,
+    saatDipilih: (Boolean) -> Unit
+) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Checkbox(
+            checked = dipilih,
+            onCheckedChange = saatDipilih,
+            modifier = Modifier.size(26.dp)
+        )
+
+        Spacer(modifier = Modifier.width(2.dp))
+
+        Text(
+            text = teks,
+            color = colorResource(R.color.teks_utama),
+            fontSize = 9.sp
+        )
+    }
+}
 
 
 
