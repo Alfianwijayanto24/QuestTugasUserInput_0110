@@ -172,4 +172,14 @@ fun KartuFormBiodata(modifier: Modifier = Modifier) {
                     modifier = Modifier.weight(1f)
                 )
             }
+            Spacer(modifier = Modifier.height(14.dp))
 
+            Text(
+                text = stringResource(R.string.pilih_skill),
+                modifier = Modifier.fillMaxWidth(),
+                color = colorResource(R.color.teks_utama),
+                fontSize = 11.sp,
+                fontWeight = FontWeight.Bold
+            )
+
+            X
