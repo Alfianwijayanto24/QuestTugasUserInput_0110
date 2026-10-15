@@ -105,4 +105,10 @@ fun KartuFormBiodata(modifier: Modifier = Modifier) {
             containerColor = colorResource(R.color.putih)
         ),
         elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
-    )
+    ){
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 18.dp, vertical = 16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        )
