@@ -291,4 +291,129 @@ fun KartuFormBiodata(modifier: Modifier = Modifier) {
         )
     }
 }
+@Composable
+fun InputBiodata(
+    value: String,
+    onValueChange: (String) -> Unit,
+    hint: String,
+    modifier: Modifier = Modifier
+) {
+    Row(
+        modifier = modifier
+            .height(38.dp)
+            .clip(RoundedCornerShape(12.dp))
+            .border(
+                width = 1.dp,
+                color = colorResource(R.color.garis_input),
+                shape = RoundedCornerShape(12.dp)
+            )
+            .padding(horizontal = 10.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Box(modifier = Modifier.fillMaxWidth()) {
+            if (value.isEmpty()) {
+                Text(
+                    text = hint,
+                    color = colorResource(R.color.teks_sekunder),
+                    fontSize = 10.sp
+                )
+            }
+
+            BasicTextField(
+                value = value,
+                onValueChange = onValueChange,
+                singleLine = true,
+                textStyle = androidx.compose.ui.text.TextStyle(
+                    color = colorResource(R.color.teks_utama),
+                    fontSize = 10.sp
+                ),
+                modifier = Modifier.fillMaxWidth()
+            )
+        }
+    }
+}
+
+@Composable
+fun KolomTanggal(
+    tanggal: String,
+    onTanggalDipilih: (String) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val context = LocalContext.current
+    val kalender = Calendar.getInstance()
+
+    Box(
+        modifier = modifier
+            .height(38.dp)
+            .clip(RoundedCornerShape(12.dp))
+            .border(
+                1.dp,
+                colorResource(R.color.garis_input),
+                RoundedCornerShape(12.dp)
+            )
+            .clickable {
+                DatePickerDialog(
+                    context,
+                    { _, tahun, bulan, hari ->
+                        onTanggalDipilih(
+                            "$hari/${bulan + 1}/$tahun"
+                        )
+                    },
+                    kalender.get(Calendar.YEAR),
+                    kalender.get(Calendar.MONTH),
+                    kalender.get(Calendar.DAY_OF_MONTH)
+                ).show()
+            }
+            .padding(horizontal = 10.dp),
+        contentAlignment = Alignment.CenterStart
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                text = if (tanggal.isBlank()) {
+                    stringResource(R.string.tanggal_lahir)
+                } else {
+                    tanggal
+                },
+                color = colorResource(R.color.teks_utama),
+                fontSize = 10.sp
+            )
+
+            Text(
+                text = "▦",
+                color = colorResource(R.color.teks_utama),
+                fontSize = 14.sp
+            )
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
