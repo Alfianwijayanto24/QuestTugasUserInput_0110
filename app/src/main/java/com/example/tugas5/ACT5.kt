@@ -111,4 +111,14 @@ fun KartuFormBiodata(modifier: Modifier = Modifier) {
                 .fillMaxWidth()
                 .padding(horizontal = 18.dp, vertical = 16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
-        )
+        ){
+            Text(
+                text = stringResource(R.string.judul_form),
+                color = colorResource(R.color.ungu_utama),
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold
+            )
+
+
+
+
