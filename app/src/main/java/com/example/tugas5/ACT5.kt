@@ -160,3 +160,10 @@ fun KartuFormBiodata(modifier: Modifier = Modifier) {
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(6.dp)
             )
+            {
+                KolomTanggal(
+                    tanggal = tanggalLahir,
+                    onTanggalDipilih = { tanggalLahir = it },
+                    modifier = Modifier.weight(1f)
+                )
+
