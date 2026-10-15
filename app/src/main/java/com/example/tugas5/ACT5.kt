@@ -132,3 +132,11 @@ fun KartuFormBiodata(modifier: Modifier = Modifier) {
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(6.dp)
             )
+            {
+                InputBiodata(
+                    value = namaDepan,
+                    onValueChange = { namaDepan = it },
+                    hint = stringResource(R.string.nama_depan),
+                    modifier = Modifier.weight(1f)
+                )
+
