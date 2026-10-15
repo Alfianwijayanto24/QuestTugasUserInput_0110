@@ -240,4 +240,21 @@ fun KartuFormBiodata(modifier: Modifier = Modifier) {
             }
         }
     }
+    if (tampilkanPesan) {
+        AlertDialog(
+            onDismissRequest = { tampilkanPesan = false },
+            confirmButton = {
+                TextButton(onClick = { tampilkanPesan = false }) {
+                    Text(stringResource(R.string.pilih))
+                }
+            },
+            title = {
+                Text(stringResource(R.string.judul_form))
+            },
+            text = {
+                Text(stringResource(R.string.pesan_kosong))
+            },
+            containerColor = colorResource(R.color.putih)
+        )
+    }
 
