@@ -139,4 +139,11 @@ fun KartuFormBiodata(modifier: Modifier = Modifier) {
                     hint = stringResource(R.string.nama_depan),
                     modifier = Modifier.weight(1f)
                 )
+                InputBiodata(
+                    value = namaBelakang,
+                    onValueChange = { namaBelakang = it },
+                    hint = stringResource(R.string.nama_belakang),
+                    modifier = Modifier.weight(1f)
+                )
+            }
 
